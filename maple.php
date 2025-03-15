@@ -20,6 +20,11 @@ if(!defined('MAPLE_LIB')){
     define('MAPLE_LIB', trailingslashit(path_join(plugin_dir_path(__FILE__), 'lib' )));
 }
 
+if(!defined('MAPLE_FUNCTIONS')){
+    define('MAPLE_FUNCTIONS', trailingslashit(path_join(MAPLE_LIB, 'functions' )));
+}
+
+require_once MAPLE_LIB . 'maple-functions.php';
 require_once MAPLE_LIB . 'class-maple-block.php';
 require_once MAPLE_LIB . 'class-maple-source.php';
 require_once MAPLE_LIB . 'class-maple.php';

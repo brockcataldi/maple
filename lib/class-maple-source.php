@@ -5,7 +5,6 @@ if (!defined('ABSPATH')){
 }
 
 class Maple_Source {
-
     /**
      * 
      */
@@ -29,8 +28,8 @@ class Maple_Source {
     public function after_setup_theme(){
         $blocks_path = path_join($this->path, 'blocks');
 
-        if(true == is_dir($blocks_path)){
-            $this->acf_blocks = $this->gather_acf_blocks(path_join($blocks_path, 'acf'));
+        if(true === is_dir($blocks_path)){
+            $this->acf_blocks = $this->find_acf_blocks(path_join($blocks_path, 'acf'));
         }
     }
 
@@ -55,27 +54,14 @@ class Maple_Source {
     /**
      * 
      */
-    private function gather_acf_blocks($acf_blocks_path){
+    private function find_acf_blocks($acf_blocks_path){
         $result = array();
+        $paths = _maple_find_directories($acf_blocks_path);
 
-        if(true == is_dir($acf_blocks_path)){
-            foreach(new DirectoryIterator($acf_blocks_path) as $file){
-
-                if(true == $file->isDot()){
-                    continue;
-                }
-
-                $file_name = $file->getFilename();
-                $file_path = path_join($acf_blocks_path, $file_name);
-
-                if(false == is_dir($file_path)){
-                    continue;
-                }
-
-                $result[] = new Maple_Block($file_path);
-            }  
+        foreach($paths as $path){
+            $result[] = new Maple_Block($path);
         }
-
+        
         return $result;
     }
 }
