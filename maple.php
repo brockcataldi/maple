@@ -1,7 +1,14 @@
-<?php 
-/*
+<?php
+/**
+ * Maple Entry Point File
+ *
+ * The file where everything is being included and the Maple class is started.
+ *
+ * @package Maple
+ * @since 1.0.0
+ *
  * Plugin Name:       Maple
- * Plugin URI:        
+ * Plugin URI:
  * Description:       Modular Bridge
  * Version:           1.0.0
  * Requires at least: 5.2
@@ -12,21 +19,24 @@
  * Text Domain:       maple
  */
 
-if (!defined('ABSPATH')){
-	exit; 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-if(!defined('MAPLE_LIB')){
-    define('MAPLE_LIB', trailingslashit(path_join(plugin_dir_path(__FILE__), 'lib' )));
+if ( ! defined( 'MAPLE_LIB' ) ) {
+	define( 'MAPLE_LIB', trailingslashit( path_join( plugin_dir_path( __FILE__ ), 'lib' ) ) );
 }
 
-if(!defined('MAPLE_FUNCTIONS')){
-    define('MAPLE_FUNCTIONS', trailingslashit(path_join(MAPLE_LIB, 'functions' )));
+if ( ! defined( 'MAPLE_FUNCTIONS' ) ) {
+	define( 'MAPLE_FUNCTIONS', trailingslashit( path_join( MAPLE_LIB, 'functions' ) ) );
+}
+
+if ( ! defined( 'MAPLE_MODELS' ) ) {
+	define( 'MAPLE_MODELS', trailingslashit( path_join( MAPLE_LIB, 'models' ) ) );
 }
 
 require_once MAPLE_LIB . 'maple-functions.php';
-require_once MAPLE_LIB . 'class-maple-block.php';
-require_once MAPLE_LIB . 'class-maple-source.php';
+require_once MAPLE_LIB . 'maple-models.php';
 require_once MAPLE_LIB . 'class-maple.php';
 
 Maple::initialize();

@@ -1,17 +1,25 @@
-<?php 
+<?php
+/**
+ * Maple Functions
+ *
+ * This includes all of the internal functions used in the system.
+ *
+ * @package Maple
+ * @since 1.0.0
+ */
 
-if (!defined('ABSPATH')){
-	exit; 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-if(false === function_exists('_maple_find_directories')){
-    require_once MAPLE_FUNCTIONS . '_maple_find_directories.php';
+if ( false === function_exists( '-maple-find-directories' ) ) {
+	require_once MAPLE_FUNCTIONS . '-maple-find-directories.php';
 }
 
-if(false === function_exists('_maple_validate_fields')){
-    require_once MAPLE_FUNCTIONS . '_maple_validate_fields.php';
+if ( false === function_exists( '-maple-validate-fields' ) ) {
+	require_once MAPLE_FUNCTIONS . '-maple-validate-fields.php';
 }
 
-if(false === function_exists('_maple_generate_block_field_group')){
-    require_once MAPLE_FUNCTIONS . '_maple_generate_block_field_group.php';
+if ( false === function_exists( '-maple-generate-block-field-group' ) ) {
+	require_once MAPLE_FUNCTIONS . '-maple-generate-block-field-group.php';
 }

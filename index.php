@@ -1,14 +1,9 @@
-<?php 
-// 
-//  Blocks
-//      - ACF [Done]
-//      - Core?
-//      - <name>
-//  Field Groups
-//  Post Types
-//      -  Normal Props
-//      -  Add the option for bindable field group
-//      
-//  Taxonomies
-//  Menus
-//  
+<?php
+/**
+ * Maple Index File
+ *
+ * Nothing happens here.
+ *
+ * @package Maple
+ * @since 1.0.0
+ */
